@@ -16,9 +16,9 @@ export default function MetalLevel({ value, max, label }: MetalLevelProps) {
   const percentage = Math.min((value / max) * 100, 100);
 
   const getColor = () => {
-    if (percentage < 50) return '#10b981'; // verde
-    if (percentage < 80) return '#facc15'; // amarelo
-    return '#ef4444'; // vermelho
+    if (percentage < 50) return '#10b981';
+    if (percentage < 80) return '#facc15';
+    return '#ef4444';
   };
 
   return (

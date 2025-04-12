@@ -13,7 +13,6 @@ export default function Dashboard({ range }: { range?: DateRange }) {
     arsenio: 0,
   });
 
-  // Atualiza dados em tempo real
   useEffect(() => {
     const interval = setInterval(async () => {
       const novaLeitura = {
@@ -39,7 +38,6 @@ export default function Dashboard({ range }: { range?: DateRange }) {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔥 Novo useEffect para buscar dados quando o range mudar
   useEffect(() => {
     async function fetchHistorico() {
       const res = await fetch('/api/historico');
@@ -52,7 +50,6 @@ export default function Dashboard({ range }: { range?: DateRange }) {
     }
   }, [range]);
 
-  // Aplica o filtro baseado no range
   const dadosFiltrados = useMemo(() => {
     if (range?.from && range.to) {
       return dadosHistorico.filter((item) => {
@@ -75,7 +72,7 @@ export default function Dashboard({ range }: { range?: DateRange }) {
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <MetalCard tipo="Mercúrio" valor={dadosTempoReal.mercurio} />
         <MetalCard tipo="Chumbo" valor={dadosTempoReal.chumbo} />
-        <MetalCard tipo="Arsênio" valor={dadosTempoReal.arsenio} />
+        <MetalCard tipo="Ferro" valor={dadosTempoReal.arsenio} />
       </section>
 
       <section className="mt-8">

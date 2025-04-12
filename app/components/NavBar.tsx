@@ -1,6 +1,6 @@
 'use client';
 
-import { DateRangePickerWithTime } from './DateRangerWithTime'; // <- alterado aqui
+import { DateRangePickerWithTime } from './DateRangerWithTime';
 import { DateRange } from 'react-day-picker';
 import { useState } from 'react';
 
@@ -21,7 +21,7 @@ export default function Navbar({
   return (
     <header className="w-full bg-white shadow-sm px-6 py-4 flex items-center justify-between">
       <div className="flex gap-6 items-center text-sm font-medium text-gray-700">
-        <span className="text-xl font-bold text-indigo-600">Sensoriamento</span>
+        <span className="text-xl font-bold text-indigo-600">FiberSense</span>
         <a href="/" className="hover:text-indigo-500">Dashboard</a>
         <a href="/logs" className="hover:text-indigo-500">Logs</a>
         <a href="/relatorio" className="hover:text-indigo-500">Relatórios</a>

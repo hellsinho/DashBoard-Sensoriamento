@@ -18,7 +18,6 @@ export default function RelatoriosPage() {
       const fromDate = new Date(range.from);
       const toDate = new Date(range.to);
   
-      // Garantir que a data final pegue até os últimos milissegundos do intervalo
       toDate.setSeconds(59);
       toDate.setMinutes(toDate.getMinutes());
       toDate.setHours(toDate.getHours());

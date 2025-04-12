@@ -30,7 +30,6 @@ export function DateRangePickerWithTime({ onApply, initialRange }: Props) {
     fromDate.setSeconds(0);
     fromDate.setMilliseconds(0);
   
-    // Se não houver `range.to`, ou se `range.to` for igual ao `range.from`, considerar mesmo dia
     const isSameDay = !range.to || range.from.toDateString() === range.to.toDateString();
   
     const toDate = isSameDay ? new Date(range.from) : new Date(range.to!);

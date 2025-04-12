@@ -16,9 +16,9 @@ export default function MetalCard({
   const porcentagem = Math.min((valor / max) * 100, 100);
 
   const cor = useMemo(() => {
-    if (porcentagem < 33) return '#22c55e'; // verde
-    if (porcentagem < 66) return '#facc15'; // amarelo
-    return '#ef4444'; // vermelho
+    if (porcentagem < 33) return '#22c55e';
+    if (porcentagem < 66) return '#facc15';
+    return '#ef4444';
   }, [porcentagem]);
 
   return (

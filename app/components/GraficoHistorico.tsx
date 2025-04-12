@@ -12,7 +12,6 @@ import {
 import { format } from 'date-fns';
 
 export default function GraficoHistorico({ dados }: { dados: any[] }) {
-  // Formatar data no eixo X
   const formatarData = (isoDate: string) => {
     const date = new Date(isoDate);
     return format(date, 'dd/MM - HH:mm');
@@ -22,7 +21,6 @@ export default function GraficoHistorico({ dados }: { dados: any[] }) {
     <div className="bg-white rounded-xl shadow-md p-4">
       <h2 className="text-lg font-semibold mb-4">Histórico de Leitura</h2>
 
-      {/* Gráfico Mercúrio */}
       <div className="mb-6">
         <h3 className="text-sm font-semibold text-rose-500 mb-2">Mercúrio</h3>
         <ResponsiveContainer width="100%" height={200}>
@@ -36,7 +34,6 @@ export default function GraficoHistorico({ dados }: { dados: any[] }) {
         </ResponsiveContainer>
       </div>
 
-      {/* Gráfico Chumbo */}
       <div className="mb-6">
         <h3 className="text-sm font-semibold text-indigo-500 mb-2">Chumbo</h3>
         <ResponsiveContainer width="100%" height={200}>
@@ -50,9 +47,8 @@ export default function GraficoHistorico({ dados }: { dados: any[] }) {
         </ResponsiveContainer>
       </div>
 
-      {/* Gráfico Arsênio */}
       <div>
-        <h3 className="text-sm font-semibold text-green-500 mb-2">Arsênio</h3>
+        <h3 className="text-sm font-semibold text-green-500 mb-2">Ferro</h3>
         <ResponsiveContainer width="100%" height={200}>
           <LineChart data={dados}>
             <CartesianGrid strokeDasharray="3 3" />

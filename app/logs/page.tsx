@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export default function LogsPage() {
   const [leituras, setLeituras] = useState<any[]>([]);
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true); // opcional para controle de paginação
+  const [hasMore, setHasMore] = useState(true);
   const limit = 10;
 
   const fetchLogs = async () => {
@@ -13,12 +13,10 @@ export default function LogsPage() {
       const res = await fetch(`/api/logs?page=${page}&limit=${limit}`);
       const json = await res.json();
 
-      // se sua API estiver retornando { data: [...] }, você deve acessar json.data
       const data = Array.isArray(json) ? json : json.data;
 
       setLeituras(data);
 
-      // se a quantidade retornada for menor que o limite, não há mais dados
       setHasMore(data.length === limit);
     } catch (error) {
       console.error('Erro ao buscar logs:', error);
